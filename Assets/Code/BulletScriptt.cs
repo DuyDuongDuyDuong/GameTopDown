@@ -26,9 +26,16 @@ public class BulletScriptt : MonoBehaviour
         if (col.CompareTag("Enemy"))
         {
             col.gameObject.GetComponent<EnemyScript>()._Hp -= _DameHit;
-            col.gameObject.GetComponent<BayScript>()._hpBay -= _DameHit;
+           // col.gameObject.GetComponent<BayScript>()._hpBay -= _DameHit;
             Destroy(gameObject);
             Scout3._Sconre += 1;
+
+        }
+        if (col.CompareTag("bay"))
+        {
+           col.gameObject.GetComponent<BayScript>()._hpBay -=_DameHit;
+           Destroy(gameObject);
+          
 
         }
     }

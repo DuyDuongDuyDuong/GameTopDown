@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
             
             if (Time.time >= nextimefire)
             {
-                Debug.Log("ffddfssssssssssssssssssssssssssssss");
+               
                 shoot();
                 nextimefire = Time.time + 1 / FireTime;
 

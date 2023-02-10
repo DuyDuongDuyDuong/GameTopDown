@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ItemNhiemVu : MonoBehaviour
 {
-    private int _cout = 0;
+    private static  int _cout = 0;
     void Start()
     {
         
@@ -24,7 +24,7 @@ public class ItemNhiemVu : MonoBehaviour
         {
             _cout += 1;
             Destroy(gameObject);
-            if (_cout == 1)
+            if (_cout == 2)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }

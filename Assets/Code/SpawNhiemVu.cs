@@ -9,7 +9,7 @@ public class SpawNhiemVu : MonoBehaviour
     
     public GameObject[] prefabs;
     public Transform[] spawnPoints;
-    public float spawnInterval = 2f;
+   
     
     
     public void StartSpawning()
@@ -20,7 +20,7 @@ public class SpawNhiemVu : MonoBehaviour
     public IEnumerator SpawnDelay()
     {
         SpawnEnemy();
-        yield return new WaitForSeconds(200f);
+        yield return new WaitForSeconds(8f);
         StartCoroutine(SpawnDelay());
     }
     
@@ -43,6 +43,6 @@ public class SpawNhiemVu : MonoBehaviour
     IEnumerator WaveStartDelay()
     {
         yield return new WaitForSeconds(10f);
-        GetComponent<SpawNhiemVu>().StartSpawning();
+        StartSpawning();
     }  
 }

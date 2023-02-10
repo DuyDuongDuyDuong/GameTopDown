@@ -7,7 +7,7 @@ public class BayScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public float _hpBay = 3f;
-    public float _dame;
+    public float _dame = 2;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -17,6 +17,8 @@ public class BayScript : MonoBehaviour
             col.gameObject.GetComponent<PlayerController>()._Hp -= _dame;
             Destroy(gameObject);
         }
+
+      
     }
 
     void Start()
@@ -27,7 +29,10 @@ public class BayScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (_hpBay <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     
     

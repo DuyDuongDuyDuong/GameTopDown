@@ -20,7 +20,7 @@ public class SpawItem : MonoBehaviour
     public IEnumerator SpawnDelay()
     {
         SpawnEnemy();
-        yield return new WaitForSeconds(200f);
+        yield return new WaitForSeconds(100f);
         StartCoroutine(SpawnDelay());
     }
     

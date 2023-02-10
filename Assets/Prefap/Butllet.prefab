@@ -207,4 +207,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _DameHit: 1
-  _Speed: 5
+  _Speed: 20
