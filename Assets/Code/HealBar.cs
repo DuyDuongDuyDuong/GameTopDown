@@ -25,6 +25,7 @@ public class HealBar : MonoBehaviour
        _Slider.maxValue = Heatl;
        _Slider.value = Heatl;
       fill.color = _Gradient.Evaluate(1f);
+      //test
 
    }
 
