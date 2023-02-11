@@ -35,6 +35,9 @@ public class EnemyScript : Protitles
             col.gameObject.GetComponent<PlayerController>()._HealBar.SetHeat(col.gameObject.GetComponent<PlayerController>().currenHeal);
         }
 
+        
+      
+
     }
 
   

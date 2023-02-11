@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletScriptt : MonoBehaviour
 { 
-    public int _DameHit;
+    public static int _DameHit = 1;
     private Rigidbody2D _rigidbody2D;
     [SerializeField] public float _Speed;
 
@@ -19,6 +19,10 @@ public class BulletScriptt : MonoBehaviour
     void Update()
     {
         _rigidbody2D.velocity = transform.up * _Speed;
+        
+        
+       
+       
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -26,10 +30,33 @@ public class BulletScriptt : MonoBehaviour
         if (col.CompareTag("Enemy"))
         {
             col.gameObject.GetComponent<EnemyScript>()._Hp -= _DameHit;
-           // col.gameObject.GetComponent<BayScript>()._hpBay -= _DameHit;
             Destroy(gameObject);
-            Scout3._Sconre += 1;
+           Scout3._Sconre += 1;
+           
+        
+           if (Scout3._Sconre == 5 )
+           {
+               LvScript.Lv += 1;
+               _DameHit += 1;
+          
+           }
+           else if (Scout3._Sconre == 10)
+           {
+               LvScript.Lv += 1;
+               _DameHit += 1;
+              
+           }
+           else if (Scout3._Sconre == 15)
+           {
+               LvScript.Lv += 1;
+               _DameHit += 1;
+           }
+           
+               
+           
 
+           
+           
         }
         if (col.CompareTag("bay"))
         {
@@ -38,5 +65,7 @@ public class BulletScriptt : MonoBehaviour
           
 
         }
+        
+     
     }
 }

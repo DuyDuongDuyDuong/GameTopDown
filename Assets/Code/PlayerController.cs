@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public Transform Gun;
     public Camera cam;
     
-    public int maxheatl;
+    public int maxheatl = 100;
     public int currenHeal;
     
     public HealBar _HealBar;
@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
    
     void Update()
     {
+        
         Movement();
         Run();
         if (Input.GetMouseButton(0) && canShooter)
@@ -64,21 +65,20 @@ public class PlayerController : MonoBehaviour
 
             }
             
-            if (_Hp <= 0)
-            {
-
-
-            }
         }
 
         if (_Hp <= 0)
         {
            // Destroy(gameObject);
             gameover.SetActive(true);
-            
-            
-          
+            Scout3._Sconre = 0;
+            BulletScriptt._DameHit = 1;
+            LvScript.Lv = 1;
+
+
+
         }
+        _HealBar.SetHeat(currenHeal);
     }
 
     private void FixedUpdate()
@@ -126,4 +126,6 @@ public class PlayerController : MonoBehaviour
     {
         _animator.SetFloat("Speed", moveInput.magnitude);
     }
+
+   
 }
