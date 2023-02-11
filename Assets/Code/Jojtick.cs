@@ -38,13 +38,20 @@ public class Jojtick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, ID
             
             
         }
-
+        
         if (shoot)
         {
             FindObjectOfType<PlayerController>().canShooter = true;
+            
+          
         }
 
-
+      
+        
+        
+            
+            
+            
 
     }
     
@@ -62,6 +69,7 @@ public class Jojtick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, ID
         }
         else
         {
+            
             FindObjectOfType<PlayerController>().canShooter = false;
         }
         touch.rectTransform.anchoredPosition = Vector3.zero;

@@ -63,13 +63,21 @@ public class PlayerController : MonoBehaviour
 
 
             }
+            
+            if (_Hp <= 0)
+            {
+
+
+            }
         }
 
         if (_Hp <= 0)
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
             gameover.SetActive(true);
             
+            
+          
         }
     }
 
